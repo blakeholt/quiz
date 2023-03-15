@@ -40,8 +40,8 @@ loadButton.addEventListener('click', event => {
                     <ul id="q-options" msg="${question.text}">
                         ${question.options.map((option, index) => `
                             
-                                <input name="$question-${question.number}" type="radio" id="option-${index}${isCorrect(question.answer, option)}" ${(debugMode && isCorrect(question.answer, option) == " correct") ? "checked='true'": ""} name="question-${i++}" value="${option}">
-                                <label for="option-${index}">${option}</label>
+                                <input name="question-${question.number}" type="radio" id="question-${question.number}-option-${index}${isCorrect(question.answer, option)}" ${(debugMode && isCorrect(question.answer, option) == " correct") ? "checked='true'": ""} value="${option}">
+                                <label for="option-${index}">${option}</label><br>
                             
                         `).join('')}
                     </ul>
