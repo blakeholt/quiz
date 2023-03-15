@@ -1,7 +1,7 @@
 // Get a reference to the "Load" button
 const loadButton = document.getElementById('load-button');
 
-var debugMode = true;
+var debugMode = false;
 
 // Add an event listener for the "click" event
 loadButton.addEventListener('click', event => {
