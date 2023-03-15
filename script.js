@@ -1,7 +1,9 @@
 // Get a reference to the "Load" button
 const loadButton = document.getElementById('load-button');
 
-var debugMode = false;
+let params = (new URL(document.location)).searchParams;
+
+var debugMode = params.get("debug");
 
 // Add an event listener for the "click" event
 loadButton.addEventListener('click', event => {
@@ -26,21 +28,21 @@ loadButton.addEventListener('click', event => {
                         const quizDiv = document.getElementById('quiz');
                         quizDiv.innerHTML = '';
                         let i = 0;
-
                         document.getElementById("quiz-title").innerHTML = "Quiz (" + data.length + " Questions)";
 
                         // Display the quiz questions
                         data.forEach(question => {
+                                    console.log(question);
                                     const quizDiv = document.getElementById('quiz');
                                     const questionDiv = document.createElement('div');
                                     questionDiv.innerHTML = `
                     <h2>${(debugMode) ? question.answer : ""}     ${question.text}</h2>
                     <ul id="q-options" msg="${question.text}">
                         ${question.options.map((option, index) => `
-                            <li>
+                            
                                 <input name="$question-${question.number}" type="radio" id="option-${index}${isCorrect(question.answer, option)}" ${(debugMode && isCorrect(question.answer, option) == " correct") ? "checked='true'": ""} name="question-${i++}" value="${option}">
                                 <label for="option-${index}">${option}</label>
-                            </li>
+                            
                         `).join('')}
                     </ul>
                 `;
