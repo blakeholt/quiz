@@ -185,8 +185,10 @@ function returnPrettyOptions(o, n, a) {
     let returnValue = "";
     o.forEach((op, index) => {
         returnValue += `
-    <input name="question-${n}" type="radio" id="question-${n}-option-${index}${isCorrect(a, op)}" ${(debugMode && isCorrect(a, op) == " correct") ? "checked='true'": ""} value="${op}">
-    <label for="question-${n}-option-${index}">${op}</label><br>
+        <div id="q-options">
+          <input name="question-${n}" type="radio" id="question-${n}-option-${index}${isCorrect(a, op)}" ${(debugMode && isCorrect(a, op) == " correct") ? "checked='true'": ""} value="${op}">
+          <label for="question-${n}-option-${index}">${op}</label><br>
+        </div>
     `
     });
 
