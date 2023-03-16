@@ -62,7 +62,7 @@ document.getElementById('submit-button').addEventListener('click', OnClickSubmit
 const radios = document.querySelectorAll('#q-options input');
 
 radios.forEach(input => {
-    radios.addEventListener('change', updateToast);
+    input.addEventListener('change', updateToast);
 });
 
 // Functions
