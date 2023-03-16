@@ -53,12 +53,17 @@ loadButton.addEventListener('click', event => {
                 quizDiv.appendChild(questionDiv);
             });
         });
+    updateToast(event);
 });
 
 // Add an event listener for the "click" event
 document.getElementById('submit-button').addEventListener('click', OnClickSubmit);
 
+const inputs = document.querySelectorAll('#q-options');
 
+inputs.forEach(input => {
+    input.addEventListener('click', updateToast);
+});
 
 // Functions
 
@@ -169,7 +174,7 @@ function returnPretty(q) {
           </div>
           <div class="card-body">
               <h5 class="card-title">${q.text}</h5>
-              <div id="q-options">
+              <div id="q-options" msg="${q.text}">
                 ${returnPrettyOptions(q.options, q.number, q.answer)}
               </div>
 
@@ -192,4 +197,21 @@ function returnPrettyOptions(o, n, a) {
     });
 
     return returnValue;
+}
+
+
+function updateToast(event) {
+    const inputs = document.querySelectorAll('#q-options');
+    let answered = 0;
+    let total = inputs.length;
+
+    inputs.forEach(input => {
+        checked = false;
+        input.querySelectorAll('input').forEach(y => {
+            if (y.checked) answered++;
+        });
+
+    });
+
+    document.getElementById("total-label").innerHTML = `${answered} / ${total} Answered`;
 }
