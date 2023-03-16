@@ -169,8 +169,9 @@ function returnPretty(q) {
           </div>
           <div class="card-body">
               <h5 class="card-title">${q.text}</h5>
-
-              ${returnPrettyOptions(q.options, q.number, q.answer)}
+              <div id="q-options">
+                ${returnPrettyOptions(q.options, q.number, q.answer)}
+              </div>
 
           </div>
 
@@ -185,10 +186,8 @@ function returnPrettyOptions(o, n, a) {
     let returnValue = "";
     o.forEach((op, index) => {
         returnValue += `
-        <div id="q-options">
           <input name="question-${n}" type="radio" id="question-${n}-option-${index}${isCorrect(a, op)}" ${(debugMode && isCorrect(a, op) == " correct") ? "checked='true'": ""} value="${op}">
           <label for="question-${n}-option-${index}">${op}</label><br>
-        </div>
     `
     });
 
