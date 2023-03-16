@@ -78,7 +78,7 @@ function OnClickSubmit(event) {
     var incorrectAnswers = [];
     var questionString = "";
 
-    const inputs = document.querySelectorAll('#q-options');
+    const inputs = document.querySelectorAll('#q-options input');
 
     inputs.forEach(input => {
         checked = false;
