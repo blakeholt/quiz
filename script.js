@@ -214,5 +214,11 @@ function updateToast(event) {
 
     });
 
+    if (total <= answered) {
+        document.getElementById("submit-button").disabled = false;
+    } else {
+        document.getElementById("submit-button").disabled = true;
+    }
+
     document.getElementById("total-label").innerHTML = `${answered} / ${total} Answered`;
 }
