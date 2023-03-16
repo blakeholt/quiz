@@ -59,10 +59,10 @@ loadButton.addEventListener('click', event => {
 // Add an event listener for the "click" event
 document.getElementById('submit-button').addEventListener('click', OnClickSubmit);
 
-const inputs = document.querySelectorAll('#q-options');
+const radios = document.querySelectorAll('#q-options');
 
-inputs.forEach(input => {
-    input.addEventListener('click', updateToast);
+radios.forEach(input => {
+    radios.addEventListener('change', updateToast);
 });
 
 // Functions
