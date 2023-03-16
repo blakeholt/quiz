@@ -53,17 +53,18 @@ loadButton.addEventListener('click', event => {
                 quizDiv.appendChild(questionDiv);
             });
             updateToast(event);
+            const tempInputs = document.querySelectorAll('#q-options input');
+
+            tempInputs.forEach(tempIn => {
+                tempIn.addEventListener('change', updateToast);
+            });
         });
 });
 
 // Add an event listener for the "click" event
 document.getElementById('submit-button').addEventListener('click', OnClickSubmit);
 
-const radios = document.querySelectorAll('#q-options input');
 
-radios.forEach(input => {
-    input.addEventListener('change', updateToast);
-});
 
 // Functions
 
