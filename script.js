@@ -28,7 +28,7 @@ loadButton.addEventListener('click', event => {
             const quizDiv = document.getElementById('quiz');
             quizDiv.innerHTML = '';
             let i = 0;
-            document.getElementById("quiz-title").innerHTML = "Quiz (" + data.length + " Questions)";
+            //document.getElementById("quiz-title").innerHTML = "Quiz (" + data.length + " Questions)";
 
             // Display the quiz questions
             data.forEach(question => {
