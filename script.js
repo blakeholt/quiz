@@ -59,7 +59,7 @@ loadButton.addEventListener('click', event => {
 // Add an event listener for the "click" event
 document.getElementById('submit-button').addEventListener('click', OnClickSubmit);
 
-const radios = document.querySelectorAll('#q-options');
+const radios = document.querySelectorAll('#q-options input');
 
 radios.forEach(input => {
     radios.addEventListener('change', updateToast);
@@ -78,7 +78,7 @@ function OnClickSubmit(event) {
     var incorrectAnswers = [];
     var questionString = "";
 
-    const inputs = document.querySelectorAll('#q-options input');
+    const inputs = document.querySelectorAll('#q-options');
 
     inputs.forEach(input => {
         checked = false;
