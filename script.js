@@ -32,7 +32,6 @@ loadButton.addEventListener('click', event => {
 
             // Display the quiz questions
             data.forEach(question => {
-                console.log(question);
                 const quizDiv = document.getElementById('quiz');
                 const questionDiv = document.createElement('div');
 
