@@ -52,8 +52,8 @@ loadButton.addEventListener('click', event => {
                 `;*/
                 quizDiv.appendChild(questionDiv);
             });
+            updateToast(event);
         });
-    updateToast(event);
 });
 
 // Add an event listener for the "click" event
@@ -201,11 +201,11 @@ function returnPrettyOptions(o, n, a) {
 
 
 function updateToast(event) {
-    const inputs = document.querySelectorAll('#q-options');
+    const temps = document.querySelectorAll('#q-options');
     let answered = 0;
-    let total = inputs.length;
+    let total = temps.length;
 
-    inputs.forEach(input => {
+    temps.forEach(input => {
         checked = false;
         input.querySelectorAll('input').forEach(y => {
             if (y.checked) answered++;
